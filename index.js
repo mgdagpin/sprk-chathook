@@ -53,9 +53,11 @@ app.get('/webhook', (req, res) => {
       body.entry.forEach(function(entry) {
   
         // Gets the body of the webhook event
-        let webhookEvent = entry.messaging[0],
-          msg = webhookEvent.postback.title;
-        console.log(`Message from ${webhookEvent.sender.id}: ${msg}`);
+        let webhookEvent = entry.messaging[0];
+
+        console.log(webhookEvent);
+
+        console.log(`Sender id ${webhookEvent.sender.id}`)
       });
   
       res.status(200).send('EVENT_RECEIVED');
