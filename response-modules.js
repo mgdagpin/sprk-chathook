@@ -1,6 +1,9 @@
 const request = require('request');
 
-const sendNow = (jsonData, method = 'post') => {
+const sendNow = (jsonData, method = "post") => {
+    console.log(`Sending back to ${sender}`);
+    console.table(jsonData);
+
     request({
         url: "https://graph.facebook.com/v2.6/me/messages",
         qs: {
@@ -19,8 +22,6 @@ const sendNow = (jsonData, method = 'post') => {
 };
 
 const sendNormalResponse = (sender, message) => {
-    console.log('Calling Send Normal Response');
-
     message = {
         text: message
     };
