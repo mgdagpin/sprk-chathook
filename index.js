@@ -36,10 +36,14 @@ if (body.object === 'page') {
                 };
             console.log(message_received);
 
-            if(message_received.message == 'normal')
+            if(message_received.message == 'normal'){
                 sendResponse.sendNormalResponse(sender, 'You say?');
-            else if(message_received.message == 'option')
+            }
+                
+            if(message_received.message == 'option'){
                 sendResponse.sendQuickResponse(sender, 'Kinsay gwapo?', []);
+            }
+                
         }
 
     });

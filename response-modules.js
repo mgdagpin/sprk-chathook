@@ -44,20 +44,20 @@ const sendQuickResponse = (sender, message, options) => {
         },
         messaging_type: "RESPONSE",
         message: {
-            text: message
-        },
-        quick_replies: [
-            {
-                content_type: "text",
-                title: "Mar",
-                payload: "Mar"
-            },
-            {
-                content_type: "text",
-                title: "Vince",
-                payload: "Vince"
-            }
-        ]
+            text: message,
+            quick_replies: [
+                {
+                    content_type: "text",
+                    title: "Mar",
+                    payload: "Mar"
+                },
+                {
+                    content_type: "text",
+                    title: "Vince",
+                    payload: "Vince"
+                }
+            ]
+        }
     }
 
     sendNow(sender, data);
