@@ -70,7 +70,7 @@ const sendRequestInfo = (sender, type) => {
         },
         messaging_type: "RESPONSE",
         message: {
-            text: message,
+            text: "",
             quick_replies: [
                 {
                     content_type: type
