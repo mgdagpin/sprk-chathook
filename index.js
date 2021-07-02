@@ -3,7 +3,7 @@
 const morgan = require('morgan');
 const express = require('express'),
     app = express(),
-    sendNormal = require('./response-modules');
+    sendResponse = require('./response-modules');
 
 app.use(express.json());
 app.use(express.urlencoded({urlencoded:true}));
@@ -35,7 +35,7 @@ if (body.object === 'page') {
                 };
             console.log(message_received);
 
-            sendNormal(sender, 'You say?');
+            sendResponse.sendNormalResponse(sender, 'You say?');
         }
 
     });
