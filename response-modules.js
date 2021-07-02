@@ -46,20 +46,19 @@ const sendQuickResponse = (sender, message, options) => {
         message: {
             text: message
         },
-        quick_replies: []
+        quick_replies: [
+            {
+                content_type: "text",
+                title: "Mar",
+                payload: "Mar"
+            },
+            {
+                content_type: "text",
+                title: "Vince",
+                payload: "Vince"
+            }
+        ]
     }
-
-    data.quick_replies.push({
-        content_type: "text",
-        title: "Mar",
-        payload: "Mar"
-    })
-
-    data.quick_replies.push({
-        content_type: "text",
-        title: "Vince",
-        payload: "Vince"
-    })
 
     sendNow(sender, data);
 }
