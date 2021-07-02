@@ -35,7 +35,10 @@ if (body.object === 'page') {
                 };
             console.log(message_received);
 
-            sendResponse.sendNormalResponse(sender, 'You say?');
+            if(message_received.message == 'normal')
+                sendResponse.sendNormalResponse(sender, 'You say?');
+            else if(message_received.message == 'menu')
+                console.log('menu');
         }
 
     });
