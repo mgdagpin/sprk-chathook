@@ -1,6 +1,6 @@
 const request = require('request');
 
-const sendNow = (jsonData, method = "post") => {
+const sendNow = (sender, jsonData, method = "post") => {
     console.log(`Sending back to ${sender}`);
     console.table(jsonData);
 
@@ -61,7 +61,7 @@ const sendQuickResponse = (sender, message, options) => {
         payload: "Vince"
     })
 
-    sendNow(data);
+    sendNow(sender, data);
 }
 
 module.exports = {sendNormalResponse, sendQuickResponse}
