@@ -3,7 +3,7 @@ const graphUrl = request('graphUrl');
 
 const sendNormalResponse = (sender, message) => {
     console.log('Calling Send Normal Response');
-    
+
     message = {
         text: message
     };
@@ -30,4 +30,4 @@ const sendNormalResponse = (sender, message) => {
     })
 }
 
-module.exports = "normal-response"
+module.exports = {sendNormalResponse}

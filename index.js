@@ -3,7 +3,7 @@
 const morgan = require('morgan');
 const express = require('express'),
     app = express(),
-    sendNormal = require('normal-response');
+    sendNormal = require('sendNormalResponse');
 
 app.use(express.json());
 app.use(express.urlencoded({urlencoded:true}));
