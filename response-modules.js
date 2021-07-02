@@ -1,5 +1,5 @@
 const request = require('request');
-const graphUrl = request('graphUrl');
+const graphUrl = require('graphUrl');
 
 const sendNormalResponse = (sender, message) => {
     console.log('Calling Send Normal Response');
@@ -28,6 +28,6 @@ const sendNormalResponse = (sender, message) => {
             console.log('Error: ', res.body.error);
         }
     })
-}
+};
 
-module.exports = {sendNormalResponse}
+module.exports = sendNormalResponse
