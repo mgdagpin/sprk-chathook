@@ -23,7 +23,7 @@ const sendNormalResponse = (sender, message) => {
     (error, res, body) => {
         if(error){
             console.log('Error sending message: ', error);
-        } else if (response.body.error) {
+        } else if (res.body.error) {
             console.log('Error: ', res.body.error);
         }
     })
