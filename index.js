@@ -37,13 +37,15 @@ if (body.object === 'page') {
             console.log(message_received);
 
             if(message_received.message == 'normal'){
-                sendResponse.sendNormalResponse(sender, 'You say?');
+                sendResponse.sendNormal(sender, 'You say?');
             }
                 
             if(message_received.message == 'option'){
-                sendResponse.sendQuickResponse(sender, 'Kinsay gwapo?', []);
+                sendResponse.sendQuickReply(sender, 'Kinsay gwapo?', []);
             }
                 
+            if(message_received.message == 'location')
+                sendResponse.sendRequestInfo(sender, 'location')
         }
 
     });

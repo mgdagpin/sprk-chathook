@@ -21,7 +21,7 @@ const sendNow = (sender, jsonData, method = "post") => {
     })
 };
 
-const sendNormalResponse = (sender, message) => {
+const sendNormal = (sender, message) => {
     message = {
         text: message
     };
@@ -33,11 +33,11 @@ const sendNormalResponse = (sender, message) => {
         message: message
     };
 
-    sendNow(data);
+    sendNow(sender, data);
 };
 
-const sendQuickResponse = (sender, message, options) => {
-    console.log(sender, 'SendQuickResponse Sender');
+const sendQuickReply= (sender, message, options) => {
+   
     data = {
         recipient: {
             id: sender
@@ -63,4 +63,21 @@ const sendQuickResponse = (sender, message, options) => {
     sendNow(sender, data);
 }
 
-module.exports = {sendNormalResponse, sendQuickResponse}
+const sendRequestInfo = (sender, type) => {
+    data = {
+        recipient: {
+            id: sender
+        },
+        messaging_type: "RESPONSE",
+        message: {
+            text: message,
+            quick_replies: [
+                {
+                    content_type: type
+                }
+            ]
+        }
+    }
+}
+
+module.exports = {sendNormal, sendQuickReply, sendRequestInfo}
