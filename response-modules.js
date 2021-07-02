@@ -35,7 +35,7 @@ const sendNormalResponse = (sender, message) => {
     sendNow(data);
 };
 
-const sendQuickResponse = (sender, message, options = []) => {
+const sendQuickResponse = (sender, message, options) => {
     data = {
         recipient: {
             id: sender

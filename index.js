@@ -38,7 +38,7 @@ if (body.object === 'page') {
             if(message_received.message == 'normal')
                 sendResponse.sendNormalResponse(sender, 'You say?');
             else if(message_received.message == 'option')
-                sendResponse.sendQuickResponse(sender, 'Kinsay gwapo?');
+                sendResponse.sendQuickResponse(sender, 'Kinsay gwapo?', []);
         }
 
     });
