@@ -1,5 +1,5 @@
 const request = require('request');
-const graphUrl = require('graphUrl');
+const graphUrl = require('./app-string');
 
 const sendNormalResponse = (sender, message) => {
     console.log('Calling Send Normal Response');
