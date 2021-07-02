@@ -48,13 +48,18 @@ const sendQuickReply= (sender, message, options) => {
             quick_replies: [
                 {
                     content_type: "text",
-                    title: "Mar",
-                    payload: "Mar"
+                    title: "Budweiser",
+                    payload: "Budweiser"
                 },
                 {
                     content_type: "text",
-                    title: "Vince",
-                    payload: "Vince"
+                    title: "Red Horse",
+                    payload: "Red Horse"
+                },
+                {
+                    content_type: "text",
+                    title: "Heneiken",
+                    payload: "Heneiken"
                 }
             ]
         }

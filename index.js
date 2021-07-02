@@ -41,7 +41,7 @@ if (body.object === 'page') {
             }
                 
             if(message_received.message == 'option'){
-                sendResponse.sendQuickReply(sender, 'Kinsay gwapo?', []);
+                sendResponse.sendQuickReply(sender, 'Pick your beer', []);
             }
                 
             if(message_received.message == 'location')
