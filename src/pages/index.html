@@ -40,13 +40,15 @@
           xfbml            : false,
           version          : 'v11.0'
         });
-      };
 
-
-      FB.Event.subscribe('customerchat.load', (e) => {
+        FB.Event.subscribe('customerchat.load', (e) => {
           console.log('Chat plugin being loaded!');
           console.log(e);
       });
+      };
+
+
+      
       
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
