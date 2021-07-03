@@ -38,7 +38,7 @@ let normalResponse = (sender, message, options) => {
 };
 
 let emailResponse = (sendTo, message) => {
-    ata = {
+    data = {
         recipient: {
             id: sendTo
         },
@@ -53,6 +53,8 @@ let emailResponse = (sendTo, message) => {
             ]
         }
     }
+
+    sendNow(data);
 }
 
 
