@@ -58,11 +58,11 @@ if (body.object === 'page') {
             }
                 
             if(message_received.message.includes('beer')){
-                sendResponse.sendQuickReply(sender, 'Pick your beer', []);
+                sendResponse.sendQuickReply.normal(sender, 'Pick your beer', []);
             }
 
             if(message_received.message == 'email'){
-                sendResponse.sendQuickReplyEmail(sender, 'Please provide your email:');
+                sendResponse.sendQuickReply.email(sender, 'Please provide your email:');
             }
                 
             if(message_received.message == 'more')

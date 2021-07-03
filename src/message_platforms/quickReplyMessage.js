@@ -1,6 +1,6 @@
 const sendNow = require('./sendNow');
 
-module.exports = sendQuickReply= (sender, message, options) => {
+let normalResponse = (sender, message, options) => {
    
     options = [
         {
@@ -35,10 +35,9 @@ module.exports = sendQuickReply= (sender, message, options) => {
     }
 
     sendNow(data);
-}
+};
 
-
-module.exports = sendQuickReplyEmail = (sendTo, message) => {
+let emailResponse = (sendTo, message) => {
     ata = {
         recipient: {
             id: sendTo
@@ -54,4 +53,11 @@ module.exports = sendQuickReplyEmail = (sendTo, message) => {
             ]
         }
     }
+}
+
+
+
+module.exports = sendQuickReply = {
+    normal: normalResponse,
+    email: emailResponse
 }
