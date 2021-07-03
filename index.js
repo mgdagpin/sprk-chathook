@@ -8,7 +8,7 @@ const express = require('express'),
 app.use(express.json());
 app.use(express.urlencoded({urlencoded:true}));
 
-app.use(morgan(':method :url :status :res[content-type]'))
+app.use(morgan(':method :url :status'))
 
 //Index
 app.get('/', (req, res) => {
@@ -20,6 +20,8 @@ app.get('/', (req, res) => {
 // Creates the endpoint for your webhook
 app.post('/webhook', (req, res) => {
 let body = req.body;
+
+console.table(body.entry);
 
 if (body.object === 'page') {
     body.entry.forEach(function(entry) {
