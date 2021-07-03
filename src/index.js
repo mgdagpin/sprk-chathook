@@ -10,27 +10,31 @@ const express = require('express'),
     app = express(),
     sendResponse = require('./response-modules');
 
+const { readFileSync } = require('fs');
+
+const homePage = readFileSync('./src/pages/index.html');
+
 app.use(express.json());
 app.use(express.urlencoded({urlencoded:true}));
-
 app.use(morgan(':method :url :status'))
 
 //Index
 app.get('/', (req, res) => {
     console.log('Someone is viewing this page!');
 
-    sendResponse.sendTemplatedGeneric(process.env.MAR_PSID);
-
-    res.status(200).end('Hey it\'s working!');
+    res.writeHead(200, {
+        'content-type': 'text/html'
+    });
+    res.write(homePage);
+    res.end();
 });
 
 
 // Creates the endpoint for your webhook
 app.post('/webhook', (req, res) => {
 let body = req.body;
-console.log(req);
+
 console.table(body.entry);
-console.log(body.entry.messaging[0]);
 
 if (body.object === 'page') {
     body.entry.forEach(function(entry) {
