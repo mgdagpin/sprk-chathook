@@ -1,5 +1,10 @@
 'use strict';
 
+if (process.env.NODE_ENV !== 'production' || process.env.NODE_ENV !== 'staging') {
+    require('dotenv').config();
+}
+
+
 const morgan = require('morgan');
 const express = require('express'),
     app = express(),
@@ -13,6 +18,9 @@ app.use(morgan(':method :url :status'))
 //Index
 app.get('/', (req, res) => {
     console.log('Someone is viewing this page!');
+
+    sendResponse.sendTemplatedGeneric(process.env.MAR_PSID);
+
     res.status(200).end('Hey it\'s working!');
 });
 
@@ -21,7 +29,7 @@ app.get('/', (req, res) => {
 app.post('/webhook', (req, res) => {
 let body = req.body;
 
-console.table(body.entry);
+console.table(body.entry.messaging);
 
 if (body.object === 'page') {
     body.entry.forEach(function(entry) {
@@ -60,6 +68,6 @@ if (body.object === 'page') {
 });
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, function() {
-console.log('Your app is listening on port ' + listener.address().port);
+var listener = app.listen(process.env.PORT, () => {
+    console.log('Your app is listening on port ' + listener.address().port);
 });

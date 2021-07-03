@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "start:dev": "nodemon index.js"
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js"
   },
   "keywords": [
     "messenger",
@@ -20,6 +20,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "nodemon": "^2.0.9"
   }
 }
