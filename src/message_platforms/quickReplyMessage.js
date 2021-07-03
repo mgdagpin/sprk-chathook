@@ -1,6 +1,6 @@
 const sendNow = require('./sendNow');
 
-const sendQuickReply= (sender, message, options) => {
+module.exports = sendQuickReply= (sender, message, options) => {
    
     data = {
         recipient: {

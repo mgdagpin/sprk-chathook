@@ -1,7 +1,7 @@
 const sendNow = require('./sendNow');
 
 
-const sendNormal = (sender, message) => {
+module.exports = regularMessage = (sender, message) => {
     message = {
         text: message
     };
