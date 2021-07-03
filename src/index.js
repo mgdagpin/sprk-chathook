@@ -54,7 +54,7 @@ if (body.object === 'page') {
             console.log(message_received);
 
             if(message_received.message == 'normal'){
-                sendResponse.sendNormal(sender, 'You say?');
+                sendResponse.regularMessage(sender, 'You say?');
             }
                 
             if(message_received.message == 'option'){
