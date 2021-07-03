@@ -1,7 +1,5 @@
 'use strict';
 
-console.log(process.env.NODE_ENV);
-
 if (process.env.NODE_ENV !== 'production' || process.env.NODE_ENV !== 'staging') {
     require('dotenv').config();
 }
@@ -31,6 +29,7 @@ app.get('/', (req, res) => {
 app.post('/webhook', (req, res) => {
 let body = req.body;
 
+console.table(body.entry);
 console.table(body.entry.messaging);
 
 if (body.object === 'page') {
