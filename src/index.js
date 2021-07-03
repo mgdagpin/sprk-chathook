@@ -57,8 +57,12 @@ if (body.object === 'page') {
                 sendResponse.regularMessage(sender, 'You say?');
             }
                 
-            if(message_received.message == 'option'){
+            if(message_received.message.includes('beer')){
                 sendResponse.sendQuickReply(sender, 'Pick your beer', []);
+            }
+
+            if(message_received.message == 'email'){
+                sendResponse.sendQuickReplyEmail(sender, 'Please provide your email:');
             }
                 
             if(message_received.message == 'more')
