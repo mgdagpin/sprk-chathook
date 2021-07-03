@@ -82,6 +82,4 @@ if (body.object === 'page') {
 // listen for requests :)
 var listener = app.listen(process.env.PORT, () => {
     console.log('Your app is listening on port ' + listener.address().port);
-
-    sendResponse.sendQuickReply.location(process.env.MAR_PSID, 'Send us your location');
 });
