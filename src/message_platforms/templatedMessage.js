@@ -15,8 +15,8 @@ const generic = {
             buttons: [
                 {
                     "type":"postback",
-                    "title":"Start Chatting",
-                    "payload":"NEED_AGENT"
+                    "title":"WANT",
+                    "payload":"PURCHASE_LOGI_G213"
                 }   
             ]
         },
@@ -32,8 +32,8 @@ const generic = {
             buttons: [
                 {
                     "type":"postback",
-                    "title":"Start Chatting",
-                    "payload":"NEED_AGENT"
+                    "title":"WANT",
+                    "payload":"PURCHASE_LOGI_G604"
                 }   
             ]
         }

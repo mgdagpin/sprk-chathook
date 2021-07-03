@@ -37,18 +37,17 @@
 
       window.fbAsyncInit = function() {
         FB.init({
-          xfbml            : false,
+          xfbml            : true,
           version          : 'v11.0'
         });
 
         FB.Event.subscribe('customerchat.load', (e) => {
-          console.log('Chat plugin being loaded!');
-          console.log(e);
-      });
+            console.log('Chat plugin being loaded!');
+            console.log(e);
+        });
       };
 
-
-      
+ 
       
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
