@@ -42,7 +42,8 @@ if (body.object === 'page') {
     // Gets the body of the webhook event
     let webhookEvent = entry.messaging[0],
         sender = webhookEvent.sender.id;
-
+        
+        console.log('%cMessaging Node:', 'color: blue;')
         console.log(webhookEvent);
 
         if(webhookEvent.message && webhookEvent.message.text) {
