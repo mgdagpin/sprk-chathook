@@ -28,9 +28,9 @@ app.get('/', (req, res) => {
 // Creates the endpoint for your webhook
 app.post('/webhook', (req, res) => {
 let body = req.body;
-
+console.log(req);
 console.table(body.entry);
-console.log(body.entry);
+console.log(body.entry.messaging[0]);
 
 if (body.object === 'page') {
     body.entry.forEach(function(entry) {
