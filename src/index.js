@@ -21,7 +21,7 @@ app.use(morgan(':method :url :status'))
 //Index
 app.get('/', (req, res) => {
     console.log('Someone is viewing this page!');
-
+    
     res.writeHead(200, {
         'content-type': 'text/html'
     });
@@ -51,20 +51,21 @@ if (body.object === 'page') {
                     sender: sender,
                     message: text
                 };
+
             console.log(message_received);
 
-            if(message_received.message == 'normal'){
+            if(message_received.message == 'normal')
                 sendResponse.regularMessage(sender, 'You say?');
-            }
                 
-            if(message_received.message.includes('beer')){
+            if(message_received.message.includes('beer'))
                 sendResponse.sendQuickReply.normal(sender, 'Pick your beer', []);
-            }
 
-            if(message_received.message == 'email'){
+            if(message_received.message == 'email')
                 sendResponse.sendQuickReply.email(sender, 'Please provide your email:');
-            }
                 
+            if(message_received.message == 'mobile')
+                sendResponse.sendQuickReply.mobile(sender, 'Give me your numbaa!')
+
             if(message_received.message == 'more')
                 sendResponse.sendTemplatedGeneric(sender)
         }
@@ -81,4 +82,6 @@ if (body.object === 'page') {
 // listen for requests :)
 var listener = app.listen(process.env.PORT, () => {
     console.log('Your app is listening on port ' + listener.address().port);
+
+    sendResponse.sendQuickReply.location(process.env.MAR_PSID, 'Send us your location');
 });

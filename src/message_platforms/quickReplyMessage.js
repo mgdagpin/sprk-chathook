@@ -55,11 +55,30 @@ let emailResponse = (sendTo, message) => {
     }
 
     sendNow(data);
-}
+};
 
+let mobileNumberResponse = (sendTo, message) => {
+    data = {
+        recipient: {
+            id: sendTo
+        },
+        messaging_type: "RESPONSE",
+        message: {
+            text: message,
+            quick_replies: [
+                {
+                    content_type: "user_phone_number",
+                    payload: "<PHONE_NUMBER>"
+                }
+            ]
+        }
+    }
 
+    sendNow(data);
+};
 
 module.exports = sendQuickReply = {
     normal: normalResponse,
-    email: emailResponse
+    email: emailResponse,
+    mobile: mobileNumberResponse
 }
