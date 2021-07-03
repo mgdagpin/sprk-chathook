@@ -61,8 +61,8 @@ if (body.object === 'page') {
                 sendResponse.sendQuickReply(sender, 'Pick your beer', []);
             }
                 
-            if(message_received.message == 'location')
-                sendResponse.sendRequestInfo(sender, 'location')
+            if(message_received.message == 'more')
+                sendResponse.sendTemplatedGeneric(sender)
         }
 
     });
