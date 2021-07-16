@@ -61,7 +61,7 @@ app.get('/webhook', (req, res) => {
 app.post('/webhook', (req, res) => {
 let body = req.body;
 
-console.table(body.entry);
+console.log(body);
 
 if (body.object === 'page') {
     body.entry.forEach(function(entry) {
