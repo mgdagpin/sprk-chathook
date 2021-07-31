@@ -65,37 +65,38 @@ console.log(body);
 
 if (body.object === 'page') {
     body.entry.forEach(function(entry) {
+    console.log(entry);
+
+    // // Gets the body of the webhook event
+    // let webhookEvent = entry.messaging[0],
+    //     sender = webhookEvent.sender.id;
         
-    // Gets the body of the webhook event
-    let webhookEvent = entry.messaging[0],
-        sender = webhookEvent.sender.id;
-        
-        console.log(webhookEvent);
+    //     console.log(webhookEvent);
 
-        if(webhookEvent.message && webhookEvent.message.text) {
-            let text = webhookEvent.message.text,
-                message_received = {
-                    sender: sender,
-                    message: text
-                };
+    //     if(webhookEvent.message && webhookEvent.message.text) {
+    //         let text = webhookEvent.message.text,
+    //             message_received = {
+    //                 sender: sender,
+    //                 message: text
+    //             };
 
-            console.log(message_received);
+    //         console.log(message_received);
 
-            if(message_received.message == 'normal')
-                sendResponse.regularMessage(sender, 'You say?');
+    //         if(message_received.message == 'normal')
+    //             sendResponse.regularMessage(sender, 'You say?');
                 
-            if(message_received.message.includes('beer'))
-                sendResponse.sendQuickReply.normal(sender, 'Pick your beer', []);
+    //         if(message_received.message.includes('beer'))
+    //             sendResponse.sendQuickReply.normal(sender, 'Pick your beer', []);
 
-            if(message_received.message == 'email')
-                sendResponse.sendQuickReply.email(sender, 'Please provide your email:');
+    //         if(message_received.message == 'email')
+    //             sendResponse.sendQuickReply.email(sender, 'Please provide your email:');
                 
-            if(message_received.message == 'mobile')
-                sendResponse.sendQuickReply.mobile(sender, 'Give me your numbaa!')
+    //         if(message_received.message == 'mobile')
+    //             sendResponse.sendQuickReply.mobile(sender, 'Give me your numbaa!')
 
-            if(message_received.message == 'more')
-                sendResponse.sendTemplatedGeneric(sender)
-        }
+    //         if(message_received.message == 'more')
+    //             sendResponse.sendTemplatedGeneric(sender)
+    //     }
 
     });
 
